@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PowerStore</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./">
+</head>
+<body>
+    <div class="wrapper">
+        <aside>
+            <header>
+                <h1 class="logo">PowerStore</h1>
+            </header>
+            <nav>
+                <ul>
+                    <li>
+                        <a class="boton-menu boton-volver" href="./index.html">
+                            <i class="bi bi-arrow-return-left"></i>"></i> Seguir comprando
+                        </a>
+                    <li>
+                        <a class="boton-menu boton-carrito active" href="./carrito.html">
+                            <i class="bi bi-cart-fill"></i> Carrito 
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <footer>
+                <p class="texto-footer">© 2022 Power Store</p>
+            </footer>
+        </aside>
+        <main>
+            <h2 class="titulo-principal">Carrito</h2>
+            <div class="contenedor-carrito">
+                <p class="carrito-vacio">Tu carrito esta vacío.<i class="bi bi-emoji-frown"></i></p>
+                
+                <div class="carrito-productos">
+                    <div class="carrito-producto">
+                        <img src="" alt="">
+                        <div class="carrito-producto-titulo">
+                            <small>Título</small>
+                            <h3>teclado-1</h3>
+                        </div>
+                        <div class="carrito-producto-cantidad">
+                            <small>Cantidad</small>
+                            <p>1</p>
+                        </div>
+                        <div class="carrito-producto-precio">
+                            <small>Precio</small>
+                            <p>$5000</p>
+                        </div>
+                        <div class="carrito-producto-subtotal">
+                            <small>Subtotal</small>
+                            <p>$5000</p>
+                        </div>
+                        <button class="carrito-producto-eliminar"><i class="bi bi-trash3-fill"></i></button>
+                    </div>
+
+                    <div class="carrito-producto">
+                        <img src="" alt="">
+                        <div class="carrito-producto-titulo">
+                            <small>Título</small>
+                            <h3>teclado-2</h3>
+                        </div>
+                        <div class="carrito-producto-cantidad">
+                            <small>Cantidad</small>
+                            <p>2</p>
+                        </div>
+                        <div class="carrito-producto-precio">
+                            <small>Precio</small>
+                            <p>$10000</p>
+                        </div>
+                        <div class="carrito-producto-subtotal">
+                            <small>Subtotal</small>
+                            <p>$10000</p>
+                        </div>
+                        <button class="carrito-producto-eliminar"><i class="bi bi-trash3-fill"></i></button>
+                    </div>
+                </div>
+                <div class="carrito-acciones">
+                    <div class="carrito-acciones-izquierda">
+                        <button class="carrito-acciones-vaciar">Vaciar carrito</button>
+                    </div>
+                    <div class="carrito-acciones-derecha">
+                        <div class="carrito-acciones-total">
+                            <p>Total</p>
+                            <p id="total">$10000</p>
+                        </div>
+                        <button class="carrito-acciones-comprar">Comprar ahora</button>
+                    </div>
+                </div>
+            </div>
+               
+        </main>              
+    </div>
+    <script src="./js/main.js"></script>
+    
+    
+</body>
+</html>
