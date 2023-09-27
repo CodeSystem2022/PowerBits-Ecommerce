@@ -3,28 +3,47 @@
 // este va a estar dividido en categorias que luego se van a ir completando
 
 const productos = [
+    // PERIFERICOS
     // Teclados
     {
-        id: "teclado-1",
-        nombre: "Teclado N1",
-        imagen: "ruta de la imagen",
+        id: "teclado_1",
+        nombre: "Teclado Mecanico HyperX Alloy CORE RGB LA",
+        imagen: "imagenes/perifericos/teclado_1.webp",
         categoria: "Teclados",
-        precio: 6700
+        precio: 33900
     },
     {
-        id: "teclado-2",
-        nombre: "Teclado N2",
-        imagen: "ruta de la imagen",
+        id: "teclado_2",
+        nombre: "Teclado Mecanico Redragon Dark Avenger K568 RGB Switch Red",
+        imagen: "/imagenes/perifericos/teclado_2.webp",
         categoria: "Teclados",
-        precio: 7700
+        precio: 31000
+    },
+    // Mouse
+    {
+        id: "mouse-1",
+        nombre: "Mouse Glorious Model O Minus (Glossy White)",
+        imagen: "/imagenes/perifericos/mouse_1.webp",
+        categoria: "Mouse",
+        precio: 21990
     },
     {
-        id: "teclado-3",
-        nombre: "Teclado N3",
-        imagen: "ruta de la imagen",
-        categoria: "Teclados",
-        precio: 8700
+        id: "mouse-2",
+        nombre: "Mouse Logitech G203 Lightsync RGB Black",
+        imagen: "/imagenes/perifericos/mouse_2.webp",
+        categoria: "Mouse",
+        precio: 20000
+    },
+    // Auriculares
+    {
+        id: "auricular_1",
+        nombre: "Auriculares HyperX Cloud Flight Black Wireless",
+        imagen: "/imagenes/perifericos/auricular_1.webp",
+        categoria: "Auriculares",
+        precio: 20000
     }
+    
+
 
     // Aca se completaran las otras categorias
 ]
