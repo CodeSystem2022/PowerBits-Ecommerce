@@ -21,14 +21,14 @@ const productos = [
     },
     // Mouse
     {
-        id: "mouse-1",
+        id: "mouse_1",
         nombre: "Mouse Glorious Model O Minus (Glossy White)",
         imagen: "/imagenes/perifericos/mouse_1.webp",
         categoria: "Mouse",
         precio: 21990
     },
     {
-        id: "mouse-2",
+        id: "mouse_2",
         nombre: "Mouse Logitech G203 Lightsync RGB Black",
         imagen: "/imagenes/perifericos/mouse_2.webp",
         categoria: "Mouse",
@@ -41,9 +41,150 @@ const productos = [
         imagen: "/imagenes/perifericos/auricular_1.webp",
         categoria: "Auriculares",
         precio: 20000
-    }
-    
-
+    },
+    // Sillas
+    {
+        id: "silla_1",
+        nombre: "Silla Gamer Checkpoint FIFA MT-2000 Qatar",
+        imagen: "/imagenes/Sillas/silla_1.webp",
+        categoria: "Sillas",
+        precio: 175000
+    },
+    {
+        id: "silla_2",
+        nombre: "Silla Gamer Vertagear Racing Series PL-4500 Crystals from Swarovski",
+        imagen: "/imagenes/Sillas/silla_2.webp",
+        categoria: "Sillas",
+        precio:  533350
+    },
+    // Coolers
+    {
+        id: "cooler_1",
+        nombre: "Cooler Fan Cooler Master MF120 S3",
+        imagen: "/imagenes/Componentes/cooler_1.webp",
+        categoria: "Coolers",
+        precio: 8900
+    },
+    // Discos
+    {
+        id: "disco_1",
+        nombre: "Disco Sólido SSD Kingston 480GB A400 500MB/s",
+        imagen: "/imagenes/Componentes/disco_1.webp",
+        categoria: "Discos",
+        precio: 21700
+    },
+    // Fuentes
+    {
+        id: "fuente_1",
+        nombre: "Fuente ASUS ROG STRIX 1000W 80 Plus Gold Full Modular 1000G",
+        imagen: "/imagenes/Componentes/fuente_1.webp",
+        categoria: "Fuentes",
+        precio: 140000
+    },
+    {
+        id: "fuente_2",
+        nombre: "Fuente Gigabyte 650W 80 Plus Bronze P650B",
+        imagen: "/imagenes/Componentes/fuente_2.webp",
+        categoria: "Fuentes",
+        precio: 57900
+    },
+    //Memorias
+    {
+        id: "memoria_1",
+        nombre: "Memoria Crucial DDR4 8GB 2666MHz",
+        imagen: "/imagenes/Componentes/memoria_1.webp",
+        categoria: "Memorias",
+        precio: 20199
+    },
+    {
+        id: "memoria_2",
+        nombre: "Memoria Team DDR4 32GB 2666MHz T-Force Delta RGB",
+        imagen: "/imagenes/Componentes/memoria_2.webp",
+        categoria: "Memorias",
+        precio: 75000
+    },
+    // Motherboard
+    {
+        id: "placa_madre_1",
+        nombre: "Mother ASUS PRIME A320M-K AM4",
+        imagen: "/imagenes/Componentes/placa_madre_1.webp",
+        categoria: "Placas Madre",
+        precio:  77999
+    },
+    {
+        id: "placa_madre_2",
+        nombre: "Mother ASUS ROG STRIX B550-F GAMING WIFI II",
+        imagen: "/imagenes/Componentes/placa_madre_2.webp",
+        categoria: "Placas Madre",
+        precio:  190000
+    },
+    // Placas de Video
+    {
+        id: "placa_video_1",
+        nombre: "Placa de Video Asrock Radeon RX 5500 XT 8GB GDDR6 CHALLENGER D OC",
+        imagen: "/imagenes/Componentes/placa_video_1.webp",
+        categoria: "Placas de Video",
+        precio:  204200
+    },
+    {
+        id: "placa_video_2",
+        nombre: "Placa de Video ASUS GeForce GTX 1650 4GB GDDR6 Phoenix EVO OC",
+        imagen: "/imagenes/Componentes/placa_video_2.webp",
+        categoria: "Placas de Video",
+        precio:   159290
+    },
+    {
+        id: "placa_video_3",
+        nombre: "Placa de Video XFX Radeon RX 7900 XTX 24GB GDDR6 SPEEDSTER MERC 310  ",
+        imagen: "/imagenes/Componentes/placa_video_3.webp",
+        categoria: "Placas de Video",
+        precio:   1335900
+    },
+    {
+        id: "placa_video_4",
+        nombre: "placa de video ZOTAC Gaming GeForce RTX 4090 AMP Extreme AIRO 24GB  ",
+        imagen: "/imagenes/Componentes/placa_video_4.webp",
+        categoria: "Placas de Video",
+        precio:   1240000
+    },
+    // Procesadores
+    {
+        id: "procesador_1",
+        nombre: "Procesador AMD Ryzen 7 5800X 4.7GHz Turbo AM4",
+        imagen: "/imagenes/Componentes/procesador_1.webp",
+        categoria: "Procesadores",
+        precio:   550000
+    },
+    {
+        id: "procesador_2",
+        nombre: "Procesador Intel Core i9 13900KF 5.8GHz Turbo ",
+        imagen: "/imagenes/Componentes/procesador_2.webp",
+        categoria: "Procesadores",
+        precio:   554250
+    },
+    // Monitores
+    {
+        id: "monitor_1",
+        nombre: "Monitor Gamer ViewSonic 24.5 XG251G 360Hz IPS",
+        imagen: "/imagenes/Monitores/monitor_1",
+        categoria: "Monitores",
+        precio:   600000
+    },
+    {
+        id: "monitor_2",
+        nombre: "Monitor Philips 19 HDMI VGA",
+        imagen: "/imagenes/Monitores/monitor_2",
+        categoria: "Monitores",
+        precio:    60000
+    },
+    // Notebooks
+    {
+        id: "notekook_1",
+        nombre: "Notebook Gamer Acer Nitro 5  FHD Core I5 11400H 8GB 512GB SSD NVMe RTX 3050 W11 144hz",
+        imagen: "/imagenes/Notebooks/notebook_1",
+        categoria: "Notebooks",
+        precio:    750000
+    },
 
     // Aca se completaran las otras categorias
 ]
