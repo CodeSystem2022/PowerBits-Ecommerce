@@ -118,5 +118,73 @@ const productos = [
         categoria: "Placas Madre",
         precio:  190000
     },
+    // Placas de Video
+    {
+        id: "placa_video_1",
+        nombre: "Placa de Video Asrock Radeon RX 5500 XT 8GB GDDR6 CHALLENGER D OC",
+        imagen: "/imagenes/Componentes/placa_video_1.webp",
+        categoria: "Placas de Video",
+        precio:  204200
+    },
+    {
+        id: "placa_video_2",
+        nombre: "Placa de Video ASUS GeForce GTX 1650 4GB GDDR6 Phoenix EVO OC",
+        imagen: "/imagenes/Componentes/placa_video_2.webp",
+        categoria: "Placas de Video",
+        precio:   159290
+    },
+    {
+        id: "placa_video_3",
+        nombre: "Placa de Video XFX Radeon RX 7900 XTX 24GB GDDR6 SPEEDSTER MERC 310  ",
+        imagen: "/imagenes/Componentes/placa_video_3.webp",
+        categoria: "Placas de Video",
+        precio:   1335900
+    },
+    {
+        id: "placa_video_4",
+        nombre: "placa de video ZOTAC Gaming GeForce RTX 4090 AMP Extreme AIRO 24GB  ",
+        imagen: "/imagenes/Componentes/placa_video_4.webp",
+        categoria: "Placas de Video",
+        precio:   1240000
+    },
+    // Procesadores
+    {
+        id: "procesador_1",
+        nombre: "Procesador AMD Ryzen 7 5800X 4.7GHz Turbo AM4",
+        imagen: "/imagenes/Componentes/procesador_1.webp",
+        categoria: "Procesadores",
+        precio:   550000
+    },
+    {
+        id: "procesador_2",
+        nombre: "Procesador Intel Core i9 13900KF 5.8GHz Turbo ",
+        imagen: "/imagenes/Componentes/procesador_2.webp",
+        categoria: "Procesadores",
+        precio:   554250
+    },
+    // Monitores
+    {
+        id: "monitor_1",
+        nombre: "Monitor Gamer ViewSonic 24.5 XG251G 360Hz IPS",
+        imagen: "/imagenes/Monitores/monitor_1",
+        categoria: "Monitores",
+        precio:   600000
+    },
+    {
+        id: "monitor_2",
+        nombre: "Monitor Philips 19 HDMI VGA",
+        imagen: "/imagenes/Monitores/monitor_2",
+        categoria: "Monitores",
+        precio:    60000
+    },
+    // Notebooks
+    {
+        id: "notekook_1",
+        nombre: "Notebook Gamer Acer Nitro 5  FHD Core I5 11400H 8GB 512GB SSD NVMe RTX 3050 W11 144hz",
+        imagen: "/imagenes/Notebooks/notebook_1",
+        categoria: "Notebooks",
+        precio:    750000
+    },
+
     // Aca se completaran las otras categorias
 ]
