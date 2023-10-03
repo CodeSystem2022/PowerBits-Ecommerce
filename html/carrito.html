@@ -18,17 +18,21 @@
                 <ul>
                     <li>
                         <a class="boton-menu boton-volver" href="./index.html">
-                            <i class="bi bi-arrow-return-left"></i></i> Seguir comprando
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-return-left" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z"/>
+                            </svg>  Seguir comprando
                         </a>
                     <li>
                         <a class="boton-menu boton-carrito active" href="./carrito.html">
-                            <i class="bi bi-cart-fill"></i> Carrito 
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
+                                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                              </svg> Carrito 
                         </a>
                     </li>
                 </ul>
             </nav>
             <footer>
-                <p class="texto-footer">© 2022 Power Store</p>
+                <p class="texto-footer">© 2023 Power Store</p>
             </footer>
         </aside>
         <main>
@@ -36,7 +40,7 @@
             <div class="contenedor-carrito">
                 <p class="carrito-vacio">Tu carrito esta vacío.<i class="bi bi-emoji-frown"></i></p>
                 
-                <div class="carrito-productos">
+                <div class="carrito-productos disabled">
                     <div class="carrito-producto">
                         <img class="carrito-producto-img" src="../imagenes/Perifericos/teclado_1.webp" alt="">
                         <div class="carrito-producto-titulo">
@@ -79,7 +83,7 @@
                         <button class="carrito-producto-eliminar"><i class="bi bi-trash3-fill"></i></button>
                     </div>
                 </div>
-                <div class="carrito-acciones">
+                <div class="carrito-acciones disabled">
                     <div class="carrito-acciones-izquierda">
                         <button class="carrito-acciones-vaciar">Vaciar carrito</button>
                     </div>
@@ -91,6 +95,8 @@
                         <button class="carrito-acciones-comprar">Comprar ahora</button>
                     </div>
                 </div>
+                <p class="carrito-comprado disabled">Muchas gracias por tu compra</p>
+
             </div>
                
         </main>              
