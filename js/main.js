@@ -189,10 +189,16 @@ const productos = [
     // Aca se completaran las otras categorias
 ]
 
-const contenedorProductos = document.querySelector("#contenedor-productos")
+const contenedorProductos = document.querySelector("#contenedor-productos");
+const botonesCategorias = document.querySelectorAll(".botone-categoria");
+const tituloPrincipal = document.querySelector("#titulo-principal");
 
-function cargarProdutos() {
-    productos.forEach(producto => {
+
+function cargarProdutos(productosElegidos) {
+
+    contenedorProductos.innerHTML = "";
+
+    productosElegidos.forEach(producto => {
 
         const div = document.createElement("div");
         div.classList.add("producto");
@@ -208,4 +214,25 @@ function cargarProdutos() {
     })
 }
 
-cargarProdutos();
+cargarProdutos(productos);
+
+botonesCategorias.forEach(boton => {
+    boton.addEventListener("click",(e) => {
+
+        botonesCategorias.forEach(boton => boton.classList.remove("active"));
+        e.currentTarget.classList.add("active");
+
+        if(e.currentTarget.id != "todos") {
+            const productoCategorias = productos.find(producto => producto.categoria.id === e.currentTargetid);
+            console.log(productoCategorias)
+            tituloPrincipal.innerText = productoCategorias.categoria.nombre;
+            const productosBoton = productos.filter(producto => producto.categoria.id === e.currentTarget.id);
+            cargarProdutos(productosBoton);
+
+        } else {
+            tituloPrincipal.innerText = "Todos los productos";
+            cargarProdutos(productos);
+        }
+
+    })
+})
