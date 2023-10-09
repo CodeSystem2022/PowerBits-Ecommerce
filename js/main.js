@@ -322,10 +322,10 @@ function actualizarBotonesAgregar(){
 
 let productosEnCarrito;
 
-
 const productosEnCarritoLS = JSON.parse(localStorage.getItem("productos-en-carrito"));
 
-if (productosEnCarrito){
+
+if (productosEnCarritoLS){
     productosEnCarrito = productosEnCarritoLS;
     actualizarNumerito();
 } else {
