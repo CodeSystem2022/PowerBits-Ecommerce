@@ -33,7 +33,7 @@ a {
 }
 
 aside {
-    padding: 2rem;
+    padding: 1.3rem;
     padding-right: 0;
     color: var(--clr-white);
     position: sticky;
@@ -52,7 +52,7 @@ aside {
 .menu {
     display: flex;
     flex-direction: column;
-    gap: .5rem;
+    gap: 0rem;
 }
 
 .boton-menu {
@@ -64,7 +64,7 @@ aside {
     align-items: center;
     gap: 1rem;
     font-weight: 400;
-    padding: 1rem;
+    padding: .8rem;
     font-size: 0.85rem;
     width: 100%;
 }
@@ -106,7 +106,6 @@ aside {
     transform: rotateZ(90deg);
 
 }
-
 
 .boton-carrito {
     margin-top: 2rem;
@@ -268,4 +267,10 @@ main {
 
 .disabled{
     display: none;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
