@@ -281,7 +281,7 @@ function cargarProdutos(productosElegidos) {
             <div class="producto-detalles">
                 <h3 class="producto-titulo">${producto.nombre}</h3>
                 <p class="producto-precio">$${producto.precio}</p>
-                <button class="producto-agregar" id="${producto.id}">AGREGAR</button>
+                <button class="producto-agregar" id="${producto.id}">Agregar al carrito</button>
             </div>
         `;
         contenedorProductos.append(div);
@@ -290,7 +290,7 @@ function cargarProdutos(productosElegidos) {
     actualizarBotonesAgregar();
 }
 
-cargarProdutos(productos);
+//cargarProdutos(productos);
 
 botonesCategorias.forEach(boton => {
     boton.addEventListener("click",(e) => {
@@ -311,7 +311,7 @@ botonesCategorias.forEach(boton => {
         }
 
     })
-})
+});
 function actualizarBotonesAgregar(){
     botonesAgregar = document.querySelectorAll(".producto-agregar");
 
@@ -323,10 +323,10 @@ function actualizarBotonesAgregar(){
 let productosEnCarrito;
 
 
-const productosEnCarritoLS = JSON.parse(localStorage.getItem("productos-en-carrito"));
+let productosEnCarritoLS = localStorage.getItem("productos-en-carrito");
 
 if (productosEnCarritoLS){
-    productosEnCarrito = productosEnCarritoLS;
+    productosEnCarrito = JSON.parse(productosEnCarritoLS);
     actualizarNumerito();
 } else {
     productosEnCarrito = [];
@@ -337,9 +337,9 @@ function agregarAlCarrito(e) {
     const IdBoton = e.currentTarget.id;
     const productoAgregado = productos.find(producto => producto.id === IdBoton);
 
-    if(productosEnCarrito.some (producto => producto.id === IdBoton)) {
-      const index = productosEnCarrito.findIndex(producto => producto.id === IdBoton);
-      productosEnCarrito[index].cantidad++;
+    if(productosEnCarrito.some(producto => producto.id === IdBoton)) {
+        const index = productosEnCarrito.findIndex(producto => producto.id === IdBoton);
+        productosEnCarrito[index].cantidad++;
 
     } else {
         productoAgregado.cantidad = 1;
