@@ -281,7 +281,7 @@ function cargarProdutos(productosElegidos) {
             <div class="producto-detalles">
                 <h3 class="producto-titulo">${producto.nombre}</h3>
                 <p class="producto-precio">$${producto.precio}</p>
-                <button class="producto-agregar" id="${producto.id}">Agregar al carrito</button>
+                <button class="producto-agregar" id="${producto.id}">AGREGAR AL CARRITO</button>
             </div>
         `;
         contenedorProductos.append(div);
@@ -321,7 +321,6 @@ function actualizarBotonesAgregar(){
 }
 
 let productosEnCarrito;
-
 
 let productosEnCarritoLS = localStorage.getItem("productos-en-carrito");
 
