@@ -227,6 +227,7 @@ main {
     color: var(--clr-main);
     display: flex;
     justify-content: space-between;
+    border-radius: 15px;
 }
 .carrito-producto-detalle {
     display: flex;
