@@ -35,13 +35,29 @@ app.post("/validar", function(req, res){
     let correo = datos.correo;
     let password = datos.password;
 
-    let registrar = "INSERT INTO tabla_usuarios(dni_usuario, nombre_usuario, apellido_usuario, correo_usuario, password_usuario) VALUES('"+dni+"', '"+nombre+"', '"+apellido+"', '"+correo+"', '"+password+"')";
 
-    conexion.query(registrar, function(error){
+    let buscar = "SELECT * FROM tabla_usuarios WHERE dni_usuario = "+dni +" ";
+
+    conexion.query(buscar, function(error, row){
         if(error){
             throw error;
         }else{
-            console.log("Datos registrados con exito")
+            if(row.length > 0){
+                console.log("No se puede registrar, usuario ya existe");
+            }else{
+
+                let registrar = "INSERT INTO tabla_usuarios(dni_usuario, nombre_usuario, apellido_usuario, correo_usuario, password_usuario) VALUES('"+dni+"', '"+nombre+"', '"+apellido+"', '"+correo+"', '"+password+"')";
+
+                conexion.query(registrar, function(error){
+                    if(error){
+                        throw error;
+                    }else{
+                        console.log("Datos registrados con exito")
+                    }
+                });
+
+            }
         }
-    })
+
+    });
 })
