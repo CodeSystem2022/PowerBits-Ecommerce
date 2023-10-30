@@ -4,31 +4,60 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <title>Registro</title>
 </head>
-<body>
-    <h1>Registro de nuevo usuario</h1>
+<body class="body-login">
+    <div class="contenedor-login">
+        <div class="nuevo-usuario">
+            <h1 class="titulo-registro">Registro de nuevo usuario</h1>
 
-    <form action="/validar" method="post"> 
+            <form class="formulario" action="/crear-usuario" method="post"> 
+        
+                D.N.I:
+                <input type="number" name="dni" id="dni"><br><br>
+        
+                Nombres:
+                <input type="text" name="nombre" id="nombre"><br><br>
+        
+                Apellido:
+                <input type="text" name="apellido" id="apellido"><br><br>
+        
+                Correo:
+                <input type="email" name="correo" id="correo"><br><br>
+        
+                Contraseña:
+                <input type="password" name="password" id="password"><br><br>
+        
+                <input type="submit" value="Registrar">
+        
+            </form>
+            <h2 id="mensaje-registro" class="mensaje-registro">Mensaje</h2>
+        </div>
+        <div class="inicio-sesion">
+            <h1 class="titulo-inicio-sesion">Inicio sesion</h1>
 
-        D.N.I:
-        <input type="number" name="dni" id="dni"><br><br>
+            <form class="formulario" action="/iniciar-sesion" method="post"> 
+        
+                D.N.I:
+                <input type="number" name="dni" id="dni"><br><br>
+        
+                Contraseña:
+                <input type="password" name="password" id="password"><br><br>
+        
+                <input type="submit" value="Iniciar sesion">
+        
+            </form>
+            <h2 id="mensaje-inicio" class="mensaje-inicio">Mensaje</h2>
+        </div>
 
-        Nombres:
-        <input type="text" name="nombre" id="nombre"><br><br>
 
-        Apellido:
-        <input type="text" name="apellido" id="apellido"><br><br>
+    </div>
+    
+    
 
-        Correo:
-        <input type="email" name="correo" id="correo"><br><br>
+    <script src="/index.js"></script>
 
-        Contraseña:
-        <input type="password" name="password" id="password"><br><br>
-
-        <input type="submit" value="Registrar">
-
-    </form>
 
     
 </body>

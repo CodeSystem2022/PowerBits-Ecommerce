@@ -330,3 +330,56 @@ border-radius: 10px;
     align-items: center;
     justify-content: center;
 }
+
+/*LOGIN*/
+
+.contenedor-login {
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    
+}
+
+.nuevo-usuario, .inicio-sesion {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 400px;
+    padding: 30px;
+    text-align: center;
+    margin: 30px;
+}
+  
+.titulo-registro, .titulo-inicio-sesion {
+    font-size: 24px;
+    color: var(--clr-main);
+    margin-bottom: 20px;
+}
+
+.formulario{
+    text-align: left;
+}
+.formulario input {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+  
+.formulario input[type="submit"] {
+    background-color: var(--clr-main);
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+  
+.formulario input[type="submit"]:hover {
+    background-color: #0056a7;
+}
+  
+  
