@@ -270,6 +270,10 @@ const numerito = document.querySelector("#numerito");
 
 function cargarProdutos(productosElegidos) {
 
+    if(!productosElegidos) {
+        productosElegidos = productos;
+    }
+
     contenedorProductos.innerHTML = "";
 
     productosElegidos.forEach(producto => {

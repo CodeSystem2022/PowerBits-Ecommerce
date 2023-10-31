@@ -12,17 +12,25 @@ let conexion = mysql.createConnection({
 });
 
 
-app.set("view engine", "ejs");
+app.set("view engine");
 
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
 app.use('/css', express.static('css'));
+app.use('/imagenes', express.static('imagenes'));
+app.use('/js', express.static('js'));
 
 app.get("/", function(req,res){
-    res.render("registro");
-    //res.sendFile(__dirname + '/html/index.html');
+    res.sendFile(__dirname + '/html/index.html');
 });    
 
+app.get("/carrito", function(req,res){
+    res.sendFile(__dirname + '/html/carrito.html');
+});    
+
+app.get("/registro", function(req,res){
+    res.sendFile(__dirname + '/html/registro.html');
+});    
 
 app.post("/crear-usuario", function(req, res){
     const datos = req.body;
