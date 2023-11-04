@@ -113,3 +113,58 @@ function comprarCarrito() {
     contenedorCarritoComprado.classList.remove("disabled");
 }
 
+const mercadopago = new MercadoPagoResponse("TEST-1a038b41-3933-4f48-a71a-40c74c26a881", {
+    locale: "es-AR", //The most common are: 'pt-BR', 'es-AR' and 'es-US'
+});
+
+const checkoutButton = modalFooter.querySelector("#checkout-btn");
+
+checkoutButton.addEventListener("click", function (){
+    checkoutButton.remove();
+
+const orderData = {
+    quantity: 1,
+    description: "compra de ecommerce",
+    price: total,
+}
+fetch("http://localhost:3000/create_preference", {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json",
+    },
+    body: JSON.stringify(orderData),
+})
+    .then(function(response){
+        return response.json();
+    })
+    then(function(preference){
+        createCheckoutButton(preference.id);
+    })
+    .catch (function (){
+        alert("Unexpected error");
+    });
+});
+
+function createCheckoutButton(preferenceId){
+    // Initialize the checkout
+    const bricksBuilder = mercadopago.bricks();
+
+    const renderComponent = async (bricksBuilder) => {
+    // If (window.checkoutButton) checkoutButton.unmount();
+    
+    await bricksBuilder.create(
+        "Wallet",
+        "button-checkout", // class/id where the payment button will be displayed
+    {
+        initialization: {
+            preferenceId: preferenceId
+        },
+        callbacks: {
+            onError: (error) => console.error(error),
+            onReady: () => {},
+        },
+    }
+    );
+    }
+    window.checkoutButton = renderComponent(bricksBuilder);
+};
