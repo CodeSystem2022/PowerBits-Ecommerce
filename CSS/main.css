@@ -381,5 +381,47 @@ border-radius: 10px;
 .formulario input[type="submit"]:hover {
     background-color: #0056a7;
 }
+
+/* MERCADO PAGO */
+/* Estilo para el título de MercadoPago */
+.titulo-mercadopago {
+    background-color: #00A0E3;; 
+    color: #fff; 
+    padding: 10px; 
+    text-align: center; 
+    margin: 30px;
+    border-radius: 20px;
+}
   
+.titulo-mercadopago h2 {
+    font-size: 24px; 
+    margin: 0; 
+}
+  
+ 
+
+/* Estilo del botón de MercadoPago */
+.boton-mercado-pago{
+    text-align: center;
+}
+
+.mercadopago-button {
+    background-color: #32A948; 
+    color: #fff; 
+    padding: 10px 20px; 
+    border: none; 
+    border-radius: 20px; 
+    font-size: 16px; 
+    cursor: pointer; 
+}
+  
+    /* Estilo al pasar el ratón sobre el botón */
+.mercadopago-button:hover {
+    background-color: #28A740; 
+}
+  
+    /* Estilo al hacer clic en el botón */
+.mercadopago-button:active {
+    background-color: #1E7E30; 
+}
   

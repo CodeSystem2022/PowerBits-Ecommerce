@@ -1,7 +1,17 @@
-const express = require("express");
-const path = require("path");
-const mysql = require("mysql");
+import mercadopago from "mercadopago"
+import express from "express"
+import path from "path"
+import cors from "cors"
+import mysql from "mysql"
+import { fileURLToPath } from 'url';
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+//const express = require("express");
+//const path = require("path");
+//const mysql = require("mysql");
+//const cors = require("cors");
+//const mercadopago = require("mercadopago");
 const app = express();
 
 let conexion = mysql.createConnection({
@@ -11,6 +21,10 @@ let conexion = mysql.createConnection({
     password: ""
 });
 
+// REPLACE WITH YOUR ACCESS TOKEN AVAILABLE IN: https://developers.mercadopago.com/panel
+mercadopago.configure({
+	access_token: "<TEST-5724749239897490-092417-620cf9697d83c9d64b40c32a183b7dd6-446506212>",
+});
 
 app.set("view engine");
 
@@ -19,6 +33,7 @@ app.use(express.urlencoded({extended:false}));
 app.use('/css', express.static('css'));
 app.use('/imagenes', express.static('imagenes'));
 app.use('/js', express.static('js'));
+
 
 app.get("/", function(req,res){
     res.sendFile(__dirname + '/html/index.html');
@@ -91,9 +106,8 @@ app.post("/iniciar-sesion", function(req, res){
             } else {
                 const usuario = rows[0];
                 if (usuario.password_usuario === password) {
-                    //res.status(200).json({ message: 'Inicio de sesión exitoso' });
-                    res.send("Inicio de sesión exitoso")
                     
+                    res.sendFile(path.join(__dirname, '/html/mp.html'));
                     
                 } else {
                     //res.status(401).json({ error: 'Contraseña incorrecta' });
@@ -106,6 +120,45 @@ app.post("/iniciar-sesion", function(req, res){
 
 })
 
+
+
+app.post("/create_preference", (req, res) => {
+
+	let preference = {
+		items: [
+			{
+				title: req.body.description,
+				unit_price: Number(req.body.price),
+				quantity: Number(req.body.quantity),
+			}
+		],
+		back_urls: {
+			"success": "http://localhost:3000",
+			"failure": "http://localhost:3000",
+			"pending": "",
+		},
+		auto_return: "approved",
+	};
+
+	mercadopago.preferences
+		.create(preference)
+		.then(function (response) {
+			res.json({
+				id: response.body.id
+			});
+		})
+        .catch(function (error) {
+			console.log(error);
+		});
+});
+
+app.get('/feedback', function (req, res) {
+	res.json({
+		Payment: req.query.payment_id,
+		Status: req.query.status,
+		MerchantOrder: req.query.merchant_order_id
+	});
+});
 
 app.listen(3000, function(){
     console.log("Servidor creado http://localhost:3000");

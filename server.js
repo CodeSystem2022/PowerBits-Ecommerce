@@ -16,7 +16,7 @@ app.use(express.static(path.join(__dirname, "../client")));
 app.use(cors());
 
 app.get("/", function () {
-	path.resolve(__dirname, "..", "client", "index.html");
+	path.resolve(__dirname, "..", "client", "html", "index.html");
 });
 
 app.post("/create_preference", (req, res) => {
