@@ -22,6 +22,7 @@ body{
     border: solid thin red;
 }
 .information{
+    width: 40%;
     display: flex;
     text-align: center;
     align-items: center;
@@ -41,7 +42,7 @@ body{
     margin: 15px 0;
     color: #555;
 }
-.info-childs input{
+.info-childs input {
     background-color: transparent;
     outline: none;
     border: solid 2px #9191bd;
@@ -57,7 +58,7 @@ body{
     color: #fff;
     box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
 }
-.for-information {
+.form-information {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -68,16 +69,16 @@ body{
     border-bottom-right-radius: 20px;
 }
 
-.for-information-childs {
+.form-information-childs {
     padding: 0 30px;
 }
 
-.for-information-childs h2 {
+.form-information-childs h2 {
     color: #333;
     font-size: 2rem;
 }
 
-.for-information-childs p {
+.form-information-childs p {
     color: #555;
 }
 
@@ -87,7 +88,7 @@ body{
 
 .icons i {
     border-radius: 50%;
-    padding: 15%;
+    padding: 15px;
     cursor: pointer;
     margin: 0 10px;
     color: #9191bd;
@@ -129,8 +130,8 @@ body{
     color: #a7a7a7;
 }
 
-.form input[type="submit"] {
-    background-color: #9191bd;
+.form input[type="submit"] { 
+    background-color: #9191bd; 
     color: #fff;
     border-radius: 20px;
     border: none;
