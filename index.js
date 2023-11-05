@@ -16,9 +16,9 @@ const app = express();
 
 let conexion = mysql.createConnection({
     host: "localhost",
-    database: "db_ecommerce",
+    database: "login-ecommerce",
     user: "root",
-    password: ""
+    password: "root"
 });
 
 // REPLACE WITH YOUR ACCESS TOKEN AVAILABLE IN: https://developers.mercadopago.com/panel
@@ -48,6 +48,7 @@ app.get("/registro", function(req,res){
 });    
 
 app.post("/crear-usuario", function(req, res){
+    console.log('ENTROOOO')
     const datos = req.body;
 
     let dni = datos.dni;
@@ -56,8 +57,7 @@ app.post("/crear-usuario", function(req, res){
     let correo = datos.correo;
     let password = datos.password;
 
-
-    let buscar = "SELECT * FROM tabla_usuarios WHERE dni_usuario = "+dni+" ";
+    let buscar = "SELECT * FROM tabla_usuarios WHERE dni = "+dni+" ";
 
     conexion.query(buscar, function(error, row){
         if(error){
@@ -69,7 +69,7 @@ app.post("/crear-usuario", function(req, res){
                 
             }else{
 
-                let registrar = "INSERT INTO tabla_usuarios(dni_usuario, nombre_usuario, apellido_usuario, correo_usuario, password_usuario) VALUES('"+dni+"', '"+nombre+"', '"+apellido+"', '"+correo+"', '"+password+"')";
+                let registrar = "INSERT INTO tabla_usuarios(dni, nombre, apellido, correo, password) VALUES('"+dni+"', '"+nombre+"', '"+apellido+"', '"+correo+"', '"+password+"')";
 
                 conexion.query(registrar, function(error){
                     if(error){
@@ -92,20 +92,21 @@ app.post("/iniciar-sesion", function(req, res){
 
     let dni = datos.dni;
     let password = datos.password;
-
-    let buscar = "SELECT * FROM tabla_usuarios WHERE dni_usuario = "+dni+" ";
+console.log(dni)
+    let buscar = "SELECT * FROM tabla_usuarios WHERE dni = "+dni+" ";
 
     conexion.query(buscar, function(error, rows) {
         if (error) {
             res.status(500).json({ error: 'Error al buscar el usuario' });
         } else {
+            console.log(rows)
             if (rows.length === 0) {
                 //res.status(401).json({ error: 'Usuario no encontrado' });
                 res.send("Usuario no encontrado")
                 
             } else {
                 const usuario = rows[0];
-                if (usuario.password_usuario === password) {
+                if (usuario.password === password) {
                     
                     res.sendFile(path.join(__dirname, '/html/mp.html'));
                     
