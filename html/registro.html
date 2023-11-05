@@ -4,36 +4,57 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/login.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <title>Registro</title>
 </head>
 <body class="body-login">
     <div class="contenedor-login">
-        <div class="nuevo-usuario">
-            <h1 class="titulo-registro">Registro de nuevo usuario</h1>
-
-            <form class="formulario" action="/crear-usuario" method="post"> 
+            <div class="container-form">
+                <div class="information">
+                    <div class="info-child">
+                        <h2>Bienvenidos</h2>
+                        <p>Para unirte a nuestra comunida ingresa tus datos</p>
+                        <input type="button" value="Iniciar sesion">
+                    </div>
+                </div>
+            <div class="form-information">
+                <div class="form-information-chlids">
+                    <h2>Crear una cuenta</h2>
+                    <div class="icons">
+                        <i class='bx bxl-google' ></i>
+                        <i class='bx bxl-facebook-circle' ></i>
+                        <i class='bx bxl-instagram' ></i>
+                    </div>
+                    <p>o usa tu email para registrarte</p>
+                    <form class="formulario" action="/crear-usuario" method="post"> >
+                        <label>
+                            <i class='bx bxs-id-card'></i>
+                            <input type="number" placeholder="DNI">
+                        </label>
+                        <label>
+                            <i class='bx bx-user'></i>
+                            <input type="text" placeholder="Nombre">
+                        </label>
+                        <label>
+                            <i class='bx bx-user'></i>
+                        <input type="text" placeholder="Apellido">
+                        </label>
+                        <label>
+                            <i class='bx bxl-gmail'></i>
+                            <input type="email" placeholder="Correo">
+                        </label>
+                        <label>
+                            <i class='bx bxs-key'></i>
+                            <input type="password" placeholder="Contraseña">
+                        </label>
+                        <input type="submit" value="Registrarse"
+                    </form>
+                </div>
         
-                D.N.I:
-                <input type="number" name="dni" id="dni"><br><br>
-        
-                Nombres:
-                <input type="text" name="nombre" id="nombre"><br><br>
-        
-                Apellido:
-                <input type="text" name="apellido" id="apellido"><br><br>
-        
-                Correo:
-                <input type="email" name="correo" id="correo"><br><br>
-        
-                Contraseña:
-                <input type="password" name="password" id="password"><br><br>
-        
-                <input type="submit" value="Registrar">
-        
+            </div>
+            </div>
             </form>
-            <h2 id="mensaje-registro" class="mensaje-registro">Mensaje</h2>
-        </div>
         <div class="inicio-sesion">
             <h1 class="titulo-inicio-sesion">Inicio sesion</h1>
 
@@ -58,7 +79,7 @@
 
     <script src="/index.js"></script>
 
-
+   
     
 </body>
 </html>
