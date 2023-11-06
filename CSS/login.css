@@ -19,7 +19,7 @@ body{
     height: 500px;
     max-width: 900px;
     transition: all in 1s;
-    border: solid thin red;
+    
 }
 .information{
     width: 40%;
@@ -143,6 +143,11 @@ body{
 
 .form input[type="submit"]:hover {
     background-color: #7a7a9a;
+}
+
+.hide {
+    position: absolute;
+    transform: translateY(-300%);
 }
 
 /*RESPONSIVE FORM*/

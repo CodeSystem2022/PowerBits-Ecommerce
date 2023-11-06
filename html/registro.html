@@ -9,77 +9,86 @@
     <title>Registro</title>
 </head>
 <body class="body-login">
-    <div class="contenedor-login">
-            <div class="container-form">
-                <div class="information">
-                    <div class="info-child">
-                        <h2>Bienvenidos</h2>
-                        <p>Para unirte a nuestra comunida ingresa tus datos</p>
-                        <input type="button" value="Iniciar sesion">
-                    </div>
+    <div class="container-form register">
+        <div class="information">
+            <div class="info-childs">
+                <h2>Bienvenidos</h2>
+                <p>Para unirte a nuestra comunida ingresa tus datos</p>
+                <input type="button" value="Iniciar sesion" id="sign-in">
+            </div>
+            </div>
+        <div class="form-information">
+            <div class="form-information-childs">
+                <h2>Crear una cuenta</h2>
+                <div class="icons">
+                    <i class='bx bxl-google' ></i>
+                    <i class='bx bxl-facebook-circle' ></i>
+                    <i class='bx bxl-instagram' ></i>
                 </div>
-            <div class="form-information">
-                <div class="form-information-childs">
-                    <h2>Crear una cuenta</h2>
-                    <div class="icons">
-                        <i class='bx bxl-google' ></i>
-                        <i class='bx bxl-facebook-circle' ></i>
-                        <i class='bx bxl-instagram' ></i>
-                    </div>
-                    <p>o usa tu email para registrarte</p>
-                    <form class="formulario" action="/crear-usuario" method="post">
-                        <label>
-                            <i class='bx bxs-id-card'></i>
-                            <input type="number" placeholder="DNI" name="dni">
-                        </label>
-                        <label>
-                            <i class='bx bx-user'></i>
-                            <input type="text" placeholder="Nombre" name="nombre">
-                        </label>
-                        <label>
-                            <i class='bx bx-user'></i>
+                <p>o usa tu email para registrarte</p>
+                <form class="form" action="/crear-usuario" method="post">
+                    <label>
+                        <i class='bx bxs-id-card'></i>
+                        <input type="number" placeholder="DNI" name="dni">
+                    </label>
+                    <label>
+                        <i class='bx bx-user'></i>
+                        <input type="text" placeholder="Nombre" name="nombre">
+                    </label>
+                    <label>
+                        <i class='bx bx-user'></i>
                         <input type="text" placeholder="Apellido" name="apellido">
-                        </label>
-                        <label>
-                            <i class='bx bxl-gmail'></i>
-                            <input type="email" placeholder="Correo" name="correo">
-                        </label>
-                        <label>
-                            <i class='bx bxs-key'></i>
-                            <input type="password" placeholder="Contraseña" name="password">
-                        </label>
+                    </label>
+                    <label>
+                        <i class='bx bxl-gmail'></i>
+                        <input type="email" placeholder="Correo" name="correo">
+                    </label>
+                    <label>
+                        <i class='bx bxs-key'></i>
+                        <input type="password" placeholder="Contraseña" name="password">
+                    </label>
                         <input type="submit" value="Registrarse">
-                    </form>
-                </div>
-        
+                </form>
             </div>
-            </div>
-            </form>
-        <div class="inicio-sesion">
-            <h1 class="titulo-inicio-sesion">Inicio sesion</h1>
-
-            <form class="formulario" action="/iniciar-sesion" method="post"> 
-        
-                D.N.I:
-                <input type="number" name="dni" id="dni"><br><br>
-        
-                Contraseña:
-                <input type="password" name="password" id="password"><br><br>
-        
-                <input type="submit" value="Iniciar sesion">
-        
-            </form>
-            <h2 id="mensaje-inicio" class="mensaje-inicio">Mensaje</h2>
         </div>
-
-
+        
     </div>
     
-    
 
-    <script src="/index.js"></script>
-
-   
     
+    <div class="container-form login hide">
+        <div class="information">
+            <div class="info-childs">
+                <h2>¡¡Bienvenidos nuevamente!!</h2>
+                <p>Para unirte a nuestra comunida ingresa tus datos</p>
+                <input type="button" value="Registrarse" id="sign-up">
+            </div>
+        </div>
+        <div class="form-information">
+            <div class="form-information-childs">
+                <h2>Iniciar sesion</h2>
+                <div class="icons">
+                    <i class='bx bxl-google' ></i>
+                    <i class='bx bxl-facebook-circle' ></i>
+                    <i class='bx bxl-instagram' ></i>
+                </div>
+                <p>o iniciar sesion con una cuenta</p>
+                <form class="form" action="/crear-usuario" method="post">
+                    <label>
+                        <i class='bx bxs-id-card'></i>
+                        <input type="number" placeholder="DNI" name="dni">
+                    </label>
+                    <label>
+                        <i class='bx bxs-key'></i>
+                        <input type="password" placeholder="Contraseña" name="password">
+                    </label>
+                        <input type="submit" value="Iniciar sesion">
+                </form>
+            </div>
+        
+        </div>
+    </div>
+
+    <script src="/js/script.js"></script>
 </body>
 </html>
