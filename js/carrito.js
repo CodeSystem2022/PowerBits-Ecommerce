@@ -104,48 +104,5 @@ let productosEnCarrito = localStorage.getItem("productos-en-carrito");
             contenedorCarritoAcciones.classList.add("disabled");
             contenedorCarritoComprado.classList.remove("disabled");
         }
+    
 
-
-        // document.addEventListener("DOMContentLoaded", function () {
-        //     const botonMercadoPago = document.querySelector("#boton-mercado-pago");
-        
-        //     botonMercadoPago.addEventListener("click", function () {
-        //         botonMercadoPago.remove();
-        
-        //         const orderData = {
-        //             quantity: 1,
-        //             description: "compra de ecommerce",
-        //             price: total.innerText, // Asegúrate de que 'total' esté definido en tu código.
-        //         };
-        
-        //         // Realiza una solicitud para crear la preferencia de pago
-        //         fetch("http://localhost:3000/create_preference", {
-        //             method: "POST",
-        //             headers: {
-        //                 "Content-Type": "application/json",
-        //             },
-        //             body: JSON.stringify(orderData),
-        //         })
-        //             .then(function (response) {
-        //                 return response.json();
-        //             })
-        //             .then(function (preference) {
-        //                 crearBotonMercadoPago(preference.id);
-        //             })
-        //             .catch(function () {
-        //                 alert("Error inesperado");
-        //             });
-        //     });
-        
-        //     function crearBotonMercadoPago(preferenceId) {
-        //         // Crea el botón de pago de Mercado Pago
-        //         const mp = new MercadoPago("TU_APP_ID"); // Reemplaza 'TU_APP_ID' con tu App ID de Mercado Pago.
-        
-        //         mp.checkout({
-        //             preference: {
-        //                 id: preferenceId,
-        //             },
-        //         });
-        //     }
-        // });      
-        

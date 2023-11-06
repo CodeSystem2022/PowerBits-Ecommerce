@@ -3,15 +3,11 @@ import express from "express"
 import path from "path"
 import cors from "cors"
 import mysql from "mysql"
+import ejs from "ejs"
 import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-//const express = require("express");
-//const path = require("path");
-//const mysql = require("mysql");
-//const cors = require("cors");
-//const mercadopago = require("mercadopago");
 const app = express();
 
 let conexion = mysql.createConnection({
@@ -23,10 +19,9 @@ let conexion = mysql.createConnection({
 
 // REPLACE WITH YOUR ACCESS TOKEN AVAILABLE IN: https://developers.mercadopago.com/panel
 mercadopago.configure({
-	access_token: "<TEST-5724749239897490-092417-620cf9697d83c9d64b40c32a183b7dd6-446506212>",
+	access_token: "TEST-1315058753464674-033121-7e70bf4364dd724c138a8beff182749a-129106746",
 });
 
-app.set("view engine");
 
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
@@ -34,6 +29,8 @@ app.use('/css', express.static('css'));
 app.use('/imagenes', express.static('imagenes'));
 app.use('/js', express.static('js'));
 
+app.engine('html', ejs.renderFile);
+app.set("view engine", 'html');
 
 app.get("/", function(req,res){
     res.sendFile(__dirname + '/html/index.html');
@@ -44,11 +41,11 @@ app.get("/carrito", function(req,res){
 });    
 
 app.get("/registro", function(req,res){
-    res.sendFile(__dirname + '/html/registro.html');
+    res.render(path.join(__dirname, '/html', 'registro.html'), { mensajeError: false, mensajeSuccess: false});
+
 });    
 
 app.post("/crear-usuario", function(req, res){
-    console.log('ENTROOOO')
     const datos = req.body;
 
     let dni = datos.dni;
@@ -58,29 +55,22 @@ app.post("/crear-usuario", function(req, res){
     let password = datos.password;
 
     let buscar = "SELECT * FROM tabla_usuarios WHERE dni = "+dni+" ";
-
+    let mensaje
     conexion.query(buscar, function(error, row){
         if(error){
             throw error;
         }else{
             if(row.length > 0){
-                //console.log("No se puede registrar, usuario ya existe");
-                res.send("No se puede registrar, usuario ya existe");
+                mensaje = 'No se puede registrar, usuario ya existe'
+                res.render(path.join(__dirname, '/html', 'registro.html'), {mensajeError: mensaje, mensajeSuccess: false,});
                 
             }else{
 
                 let registrar = "INSERT INTO tabla_usuarios(dni, nombre, apellido, correo, password) VALUES('"+dni+"', '"+nombre+"', '"+apellido+"', '"+correo+"', '"+password+"')";
 
-                conexion.query(registrar, function(error){
-                    if(error){
-                        throw error;
-                    }else{
-                        //console.log("Datos registrados con exito")
-                        res.send("Datos registrados con exito")
-                        
-                    }
-                });
-
+                conexion.query(registrar);
+                mensaje = 'Se ha registrado con éxito'
+                res.render(path.join(__dirname, '/html', 'registro.html'), {mensajeSuccess: mensaje, mensajeError: false,});
             }
         }
 
@@ -92,7 +82,6 @@ app.post("/iniciar-sesion", function(req, res){
 
     let dni = datos.dni;
     let password = datos.password;
-console.log(dni)
     let buscar = "SELECT * FROM tabla_usuarios WHERE dni = "+dni+" ";
 
     conexion.query(buscar, function(error, rows) {
@@ -141,10 +130,10 @@ app.post("/create_preference", (req, res) => {
 		auto_return: "approved",
 	};
 
-	mercadopago.preferences
+    mercadopago.preferences
 		.create(preference)
 		.then(function (response) {
-			res.json({
+			return res.json({
 				id: response.body.id
 			});
 		})

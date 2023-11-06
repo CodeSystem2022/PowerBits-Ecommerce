@@ -29,24 +29,31 @@
                 <form class="form" action="/crear-usuario" method="post">
                     <label>
                         <i class='bx bxs-id-card'></i>
-                        <input type="number" placeholder="DNI" name="dni">
+                        <input type="number" placeholder="DNI" name="dni" required>
                     </label>
                     <label>
                         <i class='bx bx-user'></i>
-                        <input type="text" placeholder="Nombre" name="nombre">
+                        <input type="text" placeholder="Nombre" name="nombre" required>
                     </label>
                     <label>
                         <i class='bx bx-user'></i>
-                        <input type="text" placeholder="Apellido" name="apellido">
+                        <input type="text" placeholder="Apellido" name="apellido" required>
                     </label>
                     <label>
                         <i class='bx bxl-gmail'></i>
-                        <input type="email" placeholder="Correo" name="correo">
+                        <input type="email" placeholder="Correo" name="correo" required>
                     </label>
                     <label>
                         <i class='bx bxs-key'></i>
                         <input type="password" placeholder="Contraseña" name="password">
                     </label>
+                    <% if(mensajeError) { %>
+                    <p id="error"><%= mensajeError %></p>
+                    <% } %>
+                    <% if(mensajeSuccess) { %>
+                        <p id="success"><%= mensajeSuccess %></p>
+                    <% } %>
+
                         <input type="submit" value="Registrarse">
                 </form>
             </div>
@@ -59,7 +66,7 @@
     <div class="container-form login hide">
         <div class="information">
             <div class="info-childs">
-                <h2>¡¡Bienvenidos nuevamente!!</h2>
+                <h2>¡Bienvenidos nuevamente!</h2>
                 <p>Para unirte a nuestra comunida ingresa tus datos</p>
                 <input type="button" value="Registrarse" id="sign-up">
             </div>
@@ -73,7 +80,7 @@
                     <i class='bx bxl-instagram' ></i>
                 </div>
                 <p>o iniciar sesion con una cuenta</p>
-                <form class="form" action="/crear-usuario" method="post">
+                <form class="form" action="/iniciar-sesion" method="post">
                     <label>
                         <i class='bx bxs-id-card'></i>
                         <input type="number" placeholder="DNI" name="dni">

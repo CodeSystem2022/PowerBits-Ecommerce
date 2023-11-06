@@ -10,15 +10,16 @@ body{
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background-color: rgb(68, 98, 98);
+    background-image: url(/imagenes/fondos-para-páginas-web-12.jpg);
+    background-size: cover;
 }
 .container-form{
     display: flex;
     border-radius: 20px;
     box-shadow: 0 5px 7px rgba(0, 0, 0, .1);
     height: 500px;
-    max-width: 900px;
-    transition: all in 1s;
+    width: 55%;
+    transition: all 1s ease;
     
 }
 .information{
@@ -84,6 +85,8 @@ body{
 
 .icons {
     margin: 15 px 0;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 
 .icons i {
@@ -186,4 +189,10 @@ body{
   }
 
     
+}
+#error {
+    color: red;
+}
+#success {
+    color: green
 }
