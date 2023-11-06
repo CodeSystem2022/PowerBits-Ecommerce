@@ -1,18 +1,18 @@
+const mercadopago = new MercadoPago("TEST-eb9e3b10-4ef3-4df2-9d67-ad8968933c19", {
+    locale: 'es-AR'
+});
 
-const botonMercadoPago = document.querySelector("#boton-mercado-pago");
+const botonMercadoPago = document.querySelector("#checkout-btn");
 let total = document.querySelector("#total"); // Agregado para corregir error
+    
 
-        botonMercadoPago.addEventListener("click", function () {
-            botonMercadoPago.remove();
-            var mensaje = document.getElementById('mensaje-pago');
-            mensaje.innerHTML = 'PAGO'
-            
-
+    
             const orderData = {
                 quantity: 1,
                 description: "compra de ecommerce",
-                price: total.innerText, // Agregado para corregir error
+                price: 100, // Agregado para corregir error
             };
+
             fetch("http://localhost:3000/create_preference", {
                 method: "POST",
                 headers: {
@@ -29,16 +29,16 @@ let total = document.querySelector("#total"); // Agregado para corregir error
             .catch(function () {
                 alert("Error inesperado");
             });
-        });
 
         function crearBotonMercadoPago(preferenceId) {
             // Inicializa el checkout de MercadoPago
             const bricksBuilder = mercadopago.bricks();
 
             const renderComponent = async (bricksBuilder) => {
+                if (window.checkoutButton) window.checkoutButton.unmount()
                 await bricksBuilder.create(
-                    "Wallet",
-                    "button-checkout", // class/id donde se mostrará el botón de pago
+                    "wallet",
+                    "boton-checkout", // class/id donde se mostrará el botón de pago
                     {
                         initialization: {
                             preferenceId: preferenceId,
@@ -50,52 +50,5 @@ let total = document.querySelector("#total"); // Agregado para corregir error
                     }
                 );
             }
-            window.botonMercadoPago = renderComponent(bricksBuilder);
+            window.checkoutButton = renderComponent(bricksBuilder)
         }
-
-
-
-        // }
-        // const total = document.querySelector("#total"); // Agregado para corregir error
-        // document.addEventListener("DOMContentLoaded", function () {
-        //     const botonMercadoPago = document.querySelector("#boton-mercado-pago");
-        
-        //     botonMercadoPago.addEventListener("click", function () {
-        //         botonMercadoPago.remove();
-        
-        //         const orderData = {
-        //             quantity: 1,
-        //             description: "compra de ecommerce",
-        //             price: total.innerText, // Asegúrate de que 'total' esté definido en tu código.
-        //         };
-        
-        //         // Realiza una solicitud para crear la preferencia de pago
-        //         fetch("http://localhost:3000/create_preference", {
-        //             method: "POST",
-        //             headers: {
-        //                 "Content-Type": "application/json",
-        //             },
-        //             body: JSON.stringify(orderData),
-        //         })
-        //             .then(function (response) {
-        //                 return response.json();
-        //             })
-        //             .then(function (preference) {
-        //                 crearBotonMercadoPago(preference.id);
-        //             })
-        //             .catch(function () {
-        //                 alert("Error inesperado");
-        //             });
-        //     });
-        
-        //     function crearBotonMercadoPago(preferenceId) {
-        //         // Crea el botón de pago de Mercado Pago
-        //         const mp = new MercadoPago("TU_APP_ID"); // Reemplaza 'TU_APP_ID' con tu App ID de Mercado Pago.
-        
-        //         mp.checkout({
-        //             preference: {
-        //                 id: preferenceId,
-        //             },
-        //         });
-        //     }
-        // });
