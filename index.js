@@ -142,13 +142,6 @@ app.post("/create_preference", (req, res) => {
 		});
 });
 
-app.get('/feedback', function (req, res) {
-	res.json({
-		Payment: req.query.payment_id,
-		Status: req.query.status,
-		MerchantOrder: req.query.merchant_order_id
-	});
-});
 
 app.listen(3000, function(){
     console.log("Servidor creado http://localhost:3000");
