@@ -18,6 +18,7 @@
 --
 -- Table structure for table `tabla_usuarios`
 --
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'root';
 
 DROP TABLE IF EXISTS `tabla_usuarios`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
