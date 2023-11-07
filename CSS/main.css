@@ -143,18 +143,7 @@ main {
     color: var(--clr-main);
     padding-bottom: 20px;
 }
-/*
-.contenedor-productos {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
-}
 
-.producto-imagen {
-    max-width: 100%;
-    border-radius: 1rem;
-}
-*/
 .contenedor-productos {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -331,97 +320,20 @@ border-radius: 10px;
     justify-content: center;
 }
 
-/*LOGIN*/
-
-.contenedor-login {
-    background-color: #f5f5f5;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    
-}
-
-.nuevo-usuario, .inicio-sesion {
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    width: 400px;
-    padding: 30px;
-    text-align: center;
-    margin: 30px;
+/* Boton mercado pago */
+#boton-checkout {
+    width: 300px;
+    height: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform 0.3s, width 0.3s, height 0.3s; 
 }
   
-.titulo-registro, .titulo-inicio-sesion {
-    font-size: 24px;
-    color: var(--clr-main);
-    margin-bottom: 20px;
-}
-
-.formulario{
-    text-align: left;
-}
-.formulario input {
-    width: 100%;
-    padding: 10px;
-    margin: 5px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-  
-.formulario input[type="submit"] {
-    background-color: var(--clr-main);
-    color: #fff;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-  
-.formulario input[type="submit"]:hover {
-    background-color: #0056a7;
-}
-
-/* MERCADO PAGO */
-/* Estilo para el título de MercadoPago */
-.titulo-mercadopago {
-    background-color: #00A0E3;; 
-    color: #fff; 
-    padding: 10px; 
-    text-align: center; 
-    margin: 30px;
-    border-radius: 20px;
-}
-  
-.titulo-mercadopago h2 {
-    font-size: 24px; 
-    margin: 0; 
-}
-  
- 
-
-/* Estilo del botón de MercadoPago */
-.boton-mercado-pago{
-    text-align: center;
-}
-
-.mercadopago-button {
-    background-color: #32A948; 
-    color: #fff; 
-    padding: 10px 20px; 
-    border: none; 
-    border-radius: 20px; 
-    font-size: 16px; 
-    cursor: pointer; 
-}
-  
-    /* Estilo al pasar el ratón sobre el botón */
-.mercadopago-button:hover {
-    background-color: #28A740; 
-}
-  
-    /* Estilo al hacer clic en el botón */
-.mercadopago-button:active {
-    background-color: #1E7E30; 
+  #boton-checkout:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+    width: 320px;
+    height: 110px; 
 }
   
