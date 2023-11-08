@@ -4,13 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Enlaces a hojas de estilo (CSS) -->
     <link rel="stylesheet" type="text/css" href="/CSS/login.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <title>Registro</title>
 </head>
 <body class="body-login">
+
+    <!-- Contenedor principal -->
     <div class="container-form register">
         <div class="information">
+
+            <!-- Contenido informativo -->
             <div class="info-childs">
                 <h2>Bienvenidos</h2>
                 <p>Para unirte a nuestra comunida ingresa tus datos</p>
@@ -18,9 +24,13 @@
             </div>
             </div>
         <div class="form-information">
+
+            <!-- Formulario de registro -->
             <div class="form-information-childs">
                 <h2>Crear una cuenta</h2>
                 <form class="form" action="/crear-usuario" method="post">
+
+                    <!-- Campos del formulario -->
                     <label>
                         <i class='bx bxs-id-card'></i>
                         <input type="number" placeholder="DNI" name="dni" required>
@@ -55,9 +65,11 @@
         
     </div>
     
-    
+    <!-- Contenedor para iniciar sesión -->
     <div class="container-form login hide">
         <div class="information">
+
+            <!-- Contenido informativo -->
             <div class="info-childs">
                 <h2>¡Bienvenidos nuevamente!</h2>
                 <p>Para unirte a nuestra comunida ingresa tus datos</p>
@@ -65,9 +77,13 @@
             </div>
         </div>
         <div class="form-information">
+
+            <!-- Formulario de inicio de sesión -->
             <div class="form-information-childs">
                 <h2>Iniciar sesion</h2>
                 <form class="form" action="/iniciar-sesion" method="post">
+
+                    <!-- Campos del formulario -->
                     <label>
                         <i class='bx bxs-id-card'></i>
                         <input type="number" placeholder="DNI" name="dni">
@@ -83,6 +99,7 @@
         </div>
     </div>
 
+    <!-- Inclusión de script JavaScript -->
     <script src="/js/script.js"></script>
 </body>
 </html>
