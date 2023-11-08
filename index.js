@@ -1,16 +1,18 @@
-import mercadopago from "mercadopago"
-import express from "express"
-import path from "path"
-import cors from "cors"
-import mysql from "mysql"
-import ejs from "ejs"
-import session from 'express-session'
-import { fileURLToPath } from 'url';
+//Importaciones de Módulos
+import mercadopago from "mercadopago" //Módulo de mercado pago para interactuar con su api
+import express from "express" //Framework web para Node.js, simplifica la creación de app web
+import path from "path" //Módulo Node.js para trabajar con rutas de archivos y directorios
+import cors from "cors" //
+import mysql from "mysql" //Módulo para interactuar con bases de datos Mysql
+import ejs from "ejs" //Motor de plantillas para generar vistas dinámicas
+import session from 'express-session' //Middleware para manejar sesiones en Express
+import { fileURLToPath } from 'url'; //Función para convertir una URL de archivo en una ruta de sistema de archivo
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const app = express();
 
+//Conexión a la base de datos
 let conexion = mysql.createConnection({
     host: "localhost",
     database: "login-ecommerce",
@@ -23,7 +25,9 @@ mercadopago.configure({
 	access_token: "TEST-1315058753464674-033121-7e70bf4364dd724c138a8beff182749a-129106746",
 });
 
-
+//Se crea una aplicación Express
+//Se configura varios middlewares para manejar solicitudes JSON, URL codificadas,
+//archivos estáticos(CSS,imágenes, JavaScript), y pata usar el motor de plantillas EJS.
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
 app.use('/css', express.static('css'));
@@ -38,22 +42,22 @@ app.use(session({
     saveUninitialized: true
 }))
 
-app.get("/", function(req,res){
+app.get("/", function(req,res){ //Muestra la página de incio(index.html)
     res.sendFile(__dirname + '/html/index.html');
 });    
 
-app.get("/carrito", function(req,res){
+app.get("/carrito", function(req,res){ //Muestra la página del carrito de compras(carrito.html)
     res.sendFile(__dirname + '/html/carrito.html');
 });    
 
-app.get("/registro", function(req,res){
+app.get("/registro", function(req,res){ //Muestra la página de registro de usuario(registro.html)
     req.session.total=req.query.total
     res.render(path.join(__dirname, '/html', 'registro.html'), { mensajeError: false, mensajeSuccess: false});
 });    
 
-app.post("/crear-usuario", function(req, res){
-    const datos = req.body;
-
+app.post("/crear-usuario", function(req, res){ //Procesa el formulario de registro de usuario, verifica
+    const datos = req.body;                    //si el usuario ya existe en la base de datos y lo
+                                               //registra si no.
     let dni = datos.dni;
     let nombre = datos.nombre;
     let apellido = datos.apellido;
@@ -83,9 +87,9 @@ app.post("/crear-usuario", function(req, res){
     });
 })
 
-app.post("/iniciar-sesion", function(req, res){
-    const datos = req.body;
-
+app.post("/iniciar-sesion", function(req, res){ //Procesa el formulario de inicio de sesión,
+    const datos = req.body;                     //verifica las credenciales del usuario en la 
+                                                //base de datos y permite el acceso si son correctas.
     let dni = datos.dni;
     let password = datos.password;
     let buscar = "SELECT * FROM tabla_usuarios WHERE dni = "+dni+" ";
@@ -119,7 +123,8 @@ app.post("/iniciar-sesion", function(req, res){
 
 
 
-app.post("/create_preference", (req, res) => {
+app.post("/create_preference", (req, res) => { //Crea una preferencia de pago utilizando la API
+                                               //de MercadoPago y devuelve el ID de la preferencia.
 	let preference = {
 		items: [
 			{
@@ -148,7 +153,7 @@ app.post("/create_preference", (req, res) => {
 		});
 });
 
-
+//El servidor se crea y escucha en localhost:3000
 app.listen(3000, function(){
     console.log("Servidor creado http://localhost:3000");
 });
