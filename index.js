@@ -4,6 +4,7 @@ import path from "path"
 import cors from "cors"
 import mysql from "mysql"
 import ejs from "ejs"
+import session from 'express-session'
 import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -31,6 +32,11 @@ app.use('/js', express.static('js'));
 
 app.engine('html', ejs.renderFile);
 app.set("view engine", 'html');
+app.use(session({
+    secret: 'my-secret',
+    resave: true,
+    saveUninitialized: true
+}))
 
 app.get("/", function(req,res){
     res.sendFile(__dirname + '/html/index.html');
@@ -41,8 +47,8 @@ app.get("/carrito", function(req,res){
 });    
 
 app.get("/registro", function(req,res){
+    req.session.total=req.query.total
     res.render(path.join(__dirname, '/html', 'registro.html'), { mensajeError: false, mensajeSuccess: false});
-
 });    
 
 app.post("/crear-usuario", function(req, res){
@@ -97,7 +103,8 @@ app.post("/iniciar-sesion", function(req, res){
                 const usuario = rows[0];
                 if (usuario.password === password) {
                     
-                    res.sendFile(path.join(__dirname, '/html/mp.html'));
+                    res.render(path.join(__dirname, '/html', 'mp.html'), {total: req.session.total});
+
                     
                 } else {
                     //res.status(401).json({ error: 'Contraseña incorrecta' });
@@ -113,7 +120,6 @@ app.post("/iniciar-sesion", function(req, res){
 
 
 app.post("/create_preference", (req, res) => {
-
 	let preference = {
 		items: [
 			{

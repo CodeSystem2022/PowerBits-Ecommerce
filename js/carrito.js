@@ -101,6 +101,7 @@ function vaciarCarrito() {
 function actualizarTotal() {
     const totalCalculado = productosEnCarrito.reduce((acc, producto) => acc + (producto.precio * producto.cantidad), 0);
     total.innerText = `$${totalCalculado}`;
+    document.getElementById('registro-url').href = '/registro?total=' + totalCalculado
 }
 // Agregar un evento al botón "Comprar"
 botonComprar.addEventListener("click", comprarCarrito);

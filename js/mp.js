@@ -7,7 +7,7 @@ const botonMercadoPago = document.querySelector("#checkout-btn");
 const orderData = {
     quantity: 1,
     description: "compra de ecommerce",
-    price: 1000, 
+    price: document.getElementById('total').value, 
 };
 
 fetch("http://localhost:3000/create_preference", {
