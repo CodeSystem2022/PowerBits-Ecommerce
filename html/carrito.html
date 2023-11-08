@@ -1,31 +1,31 @@
-<!DOCTYPE html>
+<!DOCTYPE html> //Empezamos con la estructura básica HTML.
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PowerStore</title>
+    <title>PowerStore</title> //Definimos el titulo de la página.
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
-    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/main.css"> //Enlaces a hojas de estilo CSS y recursos externos para Bootstrap e iconos.
 </head>
-<body>
-    <div class="wrapper">
+<body> 
+    <div class="wrapper">// Contenedor principal para todo el contenido de la página.
         <aside>
             <header>
-                <h1 class="logo-carrito">
+                <h1 class="logo-carrito"> // logotipo de la tienda.
                     <img src="/imagenes/logo_inicio.png" alt="PowerStore" width="200" height="200">
                   </h1>
             </header>
             <nav>
-                <ul>
+                <ul> //Creamos una lista no enumerada, la cual contiene elementos de navegación.
                     <li>
-                        <a class="boton-menu boton-volver" href="./">
+                        <a class="boton-menu boton-volver" href="./"> //Botón para seguir comprando.
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-return-left" viewBox="0 0 16 16">
                                 <path fill-rule="evenodd" d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z"/>
                             </svg>  Seguir comprando
                         </a>
                     <li>
-                        <a class="boton-menu boton-carrito active" href="./carrito">
+                        <a class="boton-menu boton-carrito active" href="./carrito"> //Botón carrito.
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
                                 <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
                               </svg> Carrito 
@@ -33,38 +33,38 @@
                     </li>
                 </ul>
             </nav>
-            <footer>
+            <footer> //Pie de página, el cuál contiene la barra lateral con un texto de copyright.
                 <p class="texto-footer">© 2023 Power Store</p>
             </footer>
         </aside>
         <main>
-            <h2 class="titulo-principal">Carrito</h2>
+            <h2 class="titulo-principal">Carrito</h2>//Encabezado principal de la página con el título "Carrito".
             <div class="contenedor-carrito">
-            <p id="carrito-vacio" class="carrito-vacio disabled">Tu carrito está vacío. <i class="bi bi-emoji-frown"></i></p>
+            <p id="carrito-vacio" class="carrito-vacio disabled">Tu carrito está vacío. <i class="bi bi-emoji-frown"></i></p>//Un mensaje que indica si el carrito está vacío.
 
-            <div id="carrito-productos" class="carrito-productos disabled">
+            <div id="carrito-productos" class="carrito-productos disabled">// Un contenedor que se llenará con productos mediante el carrito.js
                 <!-- Esto se va a completar con el JS -->
             </div>
             
-            <div id="carrito-acciones" class="carrito-acciones disabled">
+            <div id="carrito-acciones" class="carrito-acciones disabled">//Contiene acciones relacionadas con el carrito.
                 <div class="carrito-acciones-izquierda">
-                    <button id="carrito-acciones-vaciar" class="carrito-acciones-vaciar">Vaciar carrito</button>
+                    <button id="carrito-acciones-vaciar" class="carrito-acciones-vaciar">Vaciar carrito</button>//Botón para vaciar el carrito.
                 </div>
                 <div class="carrito-acciones-derecha">
-                    <div class="carrito-acciones-total">
-                        <p>Total</p>
-                        <span id="total">$10000</span>
+                    <div class="carrito-acciones-total">//Contenedor para mostrar el total de la compra.
+                        <p>Total</p>//Etiqueta de "Total".
+                        <span id="total">$10000</span>//El valor total de la compra (inicialmente $10,000).
                     </div>
                     <a href="/registro"><button id="carrito-acciones-comprar" class="carrito-acciones-comprar">Comprar ahora</button></a>
-                </div>
+                </div>//Enlace a la página de registro y botón para comprar ahora.
             </div>
         
-            <p id="carrito-comprado" class="carrito-comprado disabled">Muchas gracias por tu compra</p>
+            <p id="carrito-comprado" class="carrito-comprado disabled">Muchas gracias por tu compra</p>//Un mensaje que agradece por la compra.
                
         </main>              
     </div>
     
-    <script src="../js/carrito.js"></script>
+    <script src="../js/carrito.js"></script>//Enlace a un archivo externo (carrito.js) que controlará la funcionalidad del carrito de compras.
     
 </body>
 </html>
