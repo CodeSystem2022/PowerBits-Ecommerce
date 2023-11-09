@@ -93,15 +93,20 @@ app.post("/iniciar-sesion", function(req, res){ //Procesa el formulario de inici
     let dni = datos.dni;
     let password = datos.password;
     let buscar = "SELECT * FROM tabla_usuarios WHERE dni = "+dni+" ";
+    let mensaje;
 
     conexion.query(buscar, function(error, rows) {
         if (error) {
-            res.status(500).json({ error: 'Error al buscar el usuario' });
+        
+            mensaje = 'Error al buscar el usuario'
+            res.render(path.join(__dirname, '/html', 'registro.html'), {mensajeError: mensaje, mensajeSuccess: false,});
+        
         } else {
             console.log(rows)
             if (rows.length === 0) {
-                //res.status(401).json({ error: 'Usuario no encontrado' });
-                res.send("Usuario no encontrado")
+                
+                mensaje = 'Usuario no encontrado'
+                res.render(path.join(__dirname, '/html', 'registro.html'), {mensajeError: mensaje, mensajeSuccess: false,});
                 
             } else {
                 const usuario = rows[0];
@@ -109,10 +114,10 @@ app.post("/iniciar-sesion", function(req, res){ //Procesa el formulario de inici
                     
                     res.render(path.join(__dirname, '/html', 'mp.html'), {total: req.session.total});
 
-                    
                 } else {
-                    //res.status(401).json({ error: 'Contraseña incorrecta' });
-                    res.send("DNI y/o Contraseña incorrecta")
+
+                    mensaje = 'DNI y/o Contraseña incorrecta'
+                    res.render(path.join(__dirname, '/html', 'registro.html'), {mensajeError: mensaje, mensajeSuccess: false,});
                     
                 }
             }
