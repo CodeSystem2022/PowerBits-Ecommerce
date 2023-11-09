@@ -337,3 +337,12 @@ border-radius: 10px;
     height: 110px; 
 }
   
+/* Boton de mercado pago */
+
+.boton-mp{
+    font-family: 'Arial', sans-serif;
+    font-size: 30px;
+    color: rgb(11, 160, 11);
+    margin-top: 100px;
+    text-align: center;
+}
