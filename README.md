@@ -49,18 +49,18 @@ Hemos diseñado un sitio web ágil, fácil de comprender y sencillo, para que tu
 ---
 
 <div align="center">
-  <h3 align="center">Base de datos</h3>
+  <h3 align="center">Manejador de paquetes</h3>
   <a href="https://www.mysql.com/" target="_blank" rel="noreferrer"> 
-    <img width="60" height="60" src="https://img.icons8.com/color/48/mysql-logo.png" alt="mysql-logo" /> 
+    <img width="60" height="60" src="https://img.icons8.com/external-tal-revivo-fresh-tal-revivo/28/external-npm-a-package-manager-for-the-javascript-programming-language-logo-fresh-tal-revivo.png"     alt="external-npm-a-package-manager-for-the-javascript-programming-language-logo-fresh-tal-revivo" /> 
   </a>
 </div>
 
 ---
 
 <div align="center">
-  <h3 align="center">Controlador de versiones</h3>
+  <h3 align="center">Base de datos</h3>
   <a href="https://www.mysql.com/" target="_blank" rel="noreferrer"> 
-    <img width="60" height="60" src="https://img.icons8.com/external-tal-revivo-fresh-tal-revivo/28/external-npm-a-package-manager-for-the-javascript-programming-language-logo-fresh-tal-revivo.png" alt="external-npm-a-package-manager-for-the-javascript-programming-language-logo-fresh-tal-revivo" /> 
+    <img width="60" height="60" src="https://img.icons8.com/color/48/mysql-logo.png" alt="mysql-logo" /> 
   </a>
 </div>
 
@@ -72,21 +72,51 @@ Hemos diseñado un sitio web ágil, fácil de comprender y sencillo, para que tu
 ```bash
   git clone https://github.com/CodeSystem2022/PowerBits-Ecommerce.git
 ```
-- Paso 2 - Importar la base de datos:
+- Paso 2 - Instalar dependencias:
+```bash
+  npm install
+```
+- Paso 3 - Importar la base de datos:
   - Abrir un cliente MySQL o una interfaz de administración, como MySQL Workbench
   - Ir a server/data import
   - Seleccionar la ruta del archivo .sql en el repositorio para que automaticamente se cree la tabla con todas las columnas configuradas
     
 ![Imagen](imagenes/data-import.jpeg)
 
-- Paso 3 - Abrir la terminal de VSC y ejecutar el siguiente comando:
+- Paso 4 - Abrir la terminal de VSC y ejecutar el siguiente comando:
   - con este comando se inicia el servidor en http://localhost:3000
 ```bash
   nodemon dev
 ```
+- Paso 5 - Abrir http://localhost:3000 en el navegador para poder visualizar el ecommerce
 
 <div>
   <h3 aling="center">Con estos simples pasos se puede visualizar el ecommerce con todas sus funcionalidades y metodo de pago</h3>
 </div> 
 
- 
+---
+
+
+
+
+<div>
+  <h3 align="center"> 𝙸𝚗𝚝𝚎𝚐𝚛𝚊𝚗𝚝𝚎𝚜 de Power Bits </h3>
+  
+  👾 [𝙰𝚗𝚝𝚘𝚗𝚎𝚕𝚕𝚊 𝙰𝚛𝚛𝚊𝚎𝚣](https://github.com/antonellaarraez)
+  
+  👾 [𝙵𝚊𝚌𝚞𝚗𝚍𝚘 𝚁𝚒𝚘𝚜](https://github.com/jfacundorios)
+  
+  👾 [𝙷é𝚌𝚝𝚘𝚛 𝙵𝚘𝚗𝚣𝚊𝚕𝚒𝚍𝚊](https://github.com/hector-fonzalida)
+  
+  👾 [𝙸𝚟𝚊𝚗𝚊 𝙶𝚘𝚗𝚣á𝚕𝚎𝚣](https://github.com/IviiGonzalez)
+  
+  👾 [𝙹𝚞𝚊𝚗 𝙼𝚊𝚌𝚑𝚞𝚌𝚊](https://github.com/juaniM4c)
+  
+  👾 [𝙻𝚞𝚌𝚊𝚜 𝙼𝚎𝚗𝚍𝚎𝚣](https://github.com/LucasMendez11)
+  
+  👾 [𝙽𝚊𝚍𝚒𝚊 𝙶𝚘𝚗𝚣á𝚕𝚎𝚣](https://github.com/NadiaGonzalez27)
+  
+  👾 [𝙽𝚒𝚌𝚘𝚕á𝚜 𝙼𝚊𝚌𝚑𝚞𝚌𝚊](https://github.com/Nico25Mac)
+   
+</div>
+
