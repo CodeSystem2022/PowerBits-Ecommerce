@@ -1,7 +1,10 @@
-# 𝐏𝐎𝐖𝐄𝐑 𝐁𝐈𝐓𝐒 
-## 𝐄𝐂𝐎𝐌𝐌𝐄𝐑𝐂𝐄 - 𝐏𝐎𝐖𝐄𝐑 𝐒𝐓𝐎𝐑𝐄
+<div align="center">
+  <h1>𝐏𝐎𝐖𝐄𝐑 𝐁𝐈𝐓𝐒</h1>
+  <h2>𝐄𝐂𝐎𝐌𝐌𝐄𝐑𝐂𝐄 - 𝐏𝐎𝐖𝐄𝐑 𝐒𝐓𝐎𝐑𝐄</h2>
 
-# ![LOGO](https://github.com/CodeSystem2022/PowerBits-Ecommerce/assets/112595518/c8d68cb9-593a-4edd-80c2-6b2d4370f465)
+  ![LOGO](https://github.com/CodeSystem2022/PowerBits-Ecommerce/assets/112595518/c8d68cb9-593a-4edd-80c2-6b2d4370f465)
+</div>
+
 
 
 _En Power Store, somos mucho más que una simple tienda de insumos tecnológicos; somos tu puerta de entrada al emocionante y vibrante universo gamer._
@@ -65,5 +68,25 @@ Hemos diseñado un sitio web ágil, fácil de comprender y sencillo, para que tu
 <div> <h3 align="center" </h3>
 <img width="40" height="40" src="https://img.icons8.com/color/48/programming--v1.png" alt="programming--v1"/> Visualizacion del proyecto de forma local </div>
   
-Para poder ver nuestro proyecto se debe ejecutar el comando `nodemon dev`
+- Paso 1 - Clonar el repositorio en nuestra pc:
+```bash
+  git clone https://github.com/CodeSystem2022/PowerBits-Ecommerce.git
+```
+- Paso 2 - Importar la base de datos:
+  - Abrir un cliente MySQL o una interfaz de administración, como MySQL Workbench
+  - Ir a server/data import
+  - Seleccionar la ruta del archivo .sql en el repositorio para que automaticamente se cree la tabla con todas las columnas configuradas
+    
+![Imagen](imagenes/data-import.jpeg)
+
+- Paso 3 - Abrir la terminal de VSC y ejecutar el siguiente comando:
+  - con este comando se inicia el servidor en http://localhost:3000
+```bash
+  nodemon dev
+```
+
+<div>
+  <h3 aling="center">Con estos simples pasos se puede visualizar el ecommerce con todas sus funcionalidades y metodo de pago</h3>
+</div> 
+
  
