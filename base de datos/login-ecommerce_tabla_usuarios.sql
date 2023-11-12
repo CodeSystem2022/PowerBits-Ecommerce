@@ -40,7 +40,7 @@ CREATE TABLE `tabla_usuarios` (
 
 LOCK TABLES `tabla_usuarios` WRITE;
 /*!40000 ALTER TABLE `tabla_usuarios` DISABLE KEYS */;
-INSERT INTO `tabla_usuarios` VALUES (1,'asf','asf',12345,'lucas','safa@asf.com');
+INSERT INTO `tabla_usuarios` VALUES (1,'nombre','apellido',12345678,'password','ejemplo@correo.com');
 /*!40000 ALTER TABLE `tabla_usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
